@@ -15,6 +15,15 @@ if not __debug__:
 
 ROOT=Path(__file__).resolve().parents[1]
 ZERO=Q(0)
+def decimal_bound(x, upper=False, digits=10):
+    scaled=x*10**digits
+    n=-((-scaled.numerator)//scaled.denominator) if upper else scaled.numerator//scaled.denominator
+    sign='-' if n<0 else ''
+    whole,part=divmod(abs(n),10**digits)
+    result=f'{sign}{whole}.{part:0{digits}d}'
+    assert (Q(result)>=x) if upper else (Q(result)<=x)
+    return result
+
 def qs(a): return [qs(x) for x in a] if isinstance(a,list) else Q(a)
 def dot(a,b): return sum((x*y for x,y in zip(a,b)),ZERO)
 def mv(a,x): return [dot(row,x) for row in a]
@@ -137,7 +146,21 @@ def verify(path):
     assert ds==qs(absolute['restrictedBonusEnclosureExact']) and du==qs(absolute['unrestrictedBonusEnclosureExact'])
     assert du[0]>0 and ds[0]>Q(3,2)*du[1] and B0<U0 and S1upper<betas['U1']
     gammaS=[b1-B0,S1upper-b0];gammaU=[betas['U1']-U0upper,U1upper-U0]
-    assert gammaS[0]>gammaU[1]
+    assert gammaS[0]-gammaU[1]>Q('0.0355394472')
+    # Correct relative-penalty proof: upper tolerant gap / lower exact gap.
+    penalty_lower=1-(U1upper-b1)/(U0-B0)
+    printed_d0=Q('0.3817259867')-Q('0.2171923873')
+    printed_d1=Q('0.5317220254')-Q('0.4027278731')
+    displayed_penalty=1-printed_d1/printed_d0
+    assert U0-B0>=printed_d0>0 and 0<=U1upper-b1<=printed_d1
+    assert displayed_penalty==Q(355394471,1645335994)>Q('0.2160')
+    assert penalty_lower>Q('0.21600115')
+    capacity_exact=[[U0,U0upper],[b0,B0],[betas['U1'],U1upper],[b1,S1upper]]
+    printed_capacity=[[decimal_bound(lo),decimal_bound(hi,True)] for lo,hi in capacity_exact]
+    assert printed_capacity==[['0.3817259867','0.3835151503'],['0.2101706137','0.2171923873'],['0.5127794981','0.5317220254'],['0.4027278731','0.4863981307']]
+    printed_bonus=[[decimal_bound(lo),decimal_bound(hi,True)] for lo,hi in [du,ds]]
+    assert printed_bonus==[['0.0866515534','0.1075820401'],['0.1614029983','0.2528752265']]
+    assert ds[0]/du[1]>Q('1.50027828')
     D=U0-B0; q=qs(absolute['lowerComparisonPolynomialExact'])
     assert q==[b0*P-L+D*P,-b0*(P+W)+L*(1+k)-D*(W+k*P),b0*W-L*k+D*k*W]
     linear=[((1-rho)*b1+D)*P-L,L-((1-rho)*b1+D)*W]
@@ -193,12 +216,24 @@ def verify(path):
         assert sL/(Ccap[0]-rb[1]*pen)==Q(row['noYLossBetaUpperExact'])
     assert Q(response['lamps'][0]['YDeficitLowerExact'])>0
     assert Q(response['lamps'][0]['noYLossBetaUpperExact'])<b1
+    for j,(xlower,xupper,gain) in enumerate([('5.44012708','3.21589624','0.691636'),('1.77273816','1.28444742','0.380156')]):
+        row=response['lamps'][j]
+        assert Q(row['actualXIncrementLowerExact'])>Q(xlower)
+        assert Q(row['baselineXIncrementUpperExact'])<Q(xupper)
+        assert Q(row['actualXGainLowerExact'])>Q(gain)
+    assert Q(response['lamps'][0]['YDeficitLowerExact'])>Q('0.24083547')
+    assert Q(response['lamps'][0]['noYLossBetaUpperExact'])<Q('0.2679937276830')<b1
+    assert Q('0.4027278731')<b1 # Rounded figure label is not the exact threshold.
+    assert ax>Q('0.0156453680148') and az<Q('0.0003455399445')
+    assert rho*t<1
     assert -7 in d['sourceSolverFlags'] # Preserve unsuccessful solver provenance.
     print('Absolute comparison, closed tolerance interval and response-cost certificates passed.',flush=True)
     result=dict(passed=True,python=platform.python_version(),elapsedSeconds=time.monotonic()-start,fixtureSha256=hashlib.sha256(path.read_bytes()).hexdigest(),
       verification='exact rational core certificates; analytic propositions examined separately',readOnlyDefault=True,newOptimizerCalls=0,
       capacities=dict(U0=[float(U0),float(U0upper)],U1=[float(betas['U1']),float(U1upper)],S0=[float(b0),float(B0)],S1=[float(b1),float(S1upper)]),
       bonuses=dict(S=list(map(float,ds)),U=list(map(float,du))),gamma=dict(S=list(map(float,gammaS)),U=list(map(float,gammaU))),
+      printedCapacityBounds=printed_capacity,printedBonusBounds=printed_bonus,
+      penaltyReduction=dict(exactLower=str(penalty_lower),displayedLower=str(displayed_penalty),lowerApprox=float(penalty_lower)),
       ratioLower=float(ds[0]/du[1]),closedToleranceInterval=[float(left),float(right)],values=absolute['values'],
       physical=physical,responseBounds=response['lamps'],scope=dict(alphaXLower=float(ax),alphaZUpper=float(az),factorLower=float(ax/az),normConditionUpper=float(c)),
       limitations=['Not proof-assistant verification','No smooth endpoint attainment','No numerical input-uncertainty radius','No perceptual or manufacturing assertion'])

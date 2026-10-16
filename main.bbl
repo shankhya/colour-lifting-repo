@@ -7,7 +7,7 @@ G.~D. Finlayson and P.~Morovic, \enquote{Metamer sets,}
   \textbf{22}, 810--819 (2005).
 
 \bibitem{vanTrigt1990}
-C.~van Trigt, \enquote{Smoothest reflectance functions. {I}. definition and
+C.~van Trigt, \enquote{Smoothest reflectance functions. {I. Definition} and
   main results,} {\protect\JournalTitle{Journal of the Optical Society of
   America A}} \textbf{7}, 1891--1904 (1990).
 
@@ -35,6 +35,18 @@ P.~Urban and R.~S. Berns, \enquote{Paramer mismatch-based spectral gamut
 P.~Morovi{\v c} and J.~Morovi{\v c}, \enquote{Real world metamer sets: Or how
   we came to love noise,} in \emph{29th Color and Imaging Conference,}
   (Society for Imaging Science and Technology, 2021), pp. 111--117.
+
+\bibitem{Morovic2026Quotient}
+P.~Morovic and J.~Morovic, \enquote{Color formation as a {Hilbert} space
+  operator: quotient structures and limits of metamerism,}
+  {\protect\JournalTitle{Journal of the Optical Society of America A}}
+  \textbf{43}, 1614--1623 (2026).
+
+\bibitem{Morovic2026Mismatch}
+P.~Morovic and J.~Morovic, \enquote{Color formation as a {Hilbert} space
+  operator: metamer mismatching and the limits of chromatic adaptation,}
+  {\protect\JournalTitle{Journal of the Optical Society of America A}}
+  \textbf{43}, 1668--1677 (2026).
 
 \bibitem{Flinkman2012}
 M.~Flinkman, H.~Laamanen, P.~Vahimaa, and M.~Hauta-Kasari, \enquote{Number of

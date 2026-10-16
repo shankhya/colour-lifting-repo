@@ -1,16 +1,18 @@
 # Reference-matched reflectance design: reproducibility package
 
-**Spectral regularity increases the absolute benefit of response tolerance in reference-matched reflectance design**
+**Response Tolerance and Spectral Regularity in Reference-Matched Reflectance Design**
 
-This private repository contains the selected paper, detailed proofs, exact computational certificates, and figure code. It is a standalone extraction of the research project, with a fresh distribution history. The manuscript remains an author-review draft; author names, affiliations and declarations are blank. No journal submission or reviewer access has been arranged.
+This private repository contains the revised paper, detailed proofs, exact computational certificates, and figure code. It is a standalone extraction of the research project, with a fresh distribution history. The manuscript remains an author-review draft; author names, affiliations and declarations are blank. No journal submission or reviewer access has been arranged.
 
 ## Contents
 
-- `main.pdf`, `main.tex`, `main.bbl`, `references.bib`: article and bibliography.
+- `main.pdf`, `main.tex`, `main.bbl`, `references.bib`: revised article and bibliography.
+- `main-review.tex`, `main-review.pdf`: matching Overleaf entry point and PDF.
+- `overleaf/colour-lifting-josaa-overleaf.zip`: minimal 15-file journal source package. Select XeLaTeX and compile `main-review.tex` and `supplement.tex` separately.
 - `supplement.pdf`, `supplement.tex`: detailed analytical proofs and certificate definitions.
 - `figures/`, `tables/`: four vector figures and three numerical tables used by the paper.
 - `reproducibility/`: exact CIE-derived input fixture, feasible spectra, support certificates, saved display values, Python verifier and MATLAB plotting function.
-- `THIRD_PARTY_NOTICES.md`: origin, preparation record, source attribution and license terms.
+- `THIRD_PARTY_NOTICES.md`: source attribution and license terms.
 - `validation.json`, `SHA256SUMS`, `verify_package.py`: distribution validation and integrity checks.
 
 Internal research logs, schedules, credentials, machine configuration, caches, unrelated experiments and the original Git history are outside this distribution. Scientific inputs and unsuccessful-solver provenance inside the exact fixture are preserved.
@@ -48,3 +50,5 @@ python -B tools/verify_paper_results.py --emit results/research/R135-paper-verif
 ```
 
 This optional command overwrites the display export and records a new elapsed time, so its checksum will differ. Start with the read-only commands above to validate the distributed files.
+
+The minimal Overleaf ZIP contains only the two TeX sources, bibliography, four vector figures and required template dependencies. The reproducibility files are available separately in this repository. The title update changes no scientific result.

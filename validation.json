@@ -1,34 +1,20 @@
 {
-  "preparedAtUtc": "2026-10-16T11:09:24.404295+00:00",
-  "sourceCommit": "35563a7cec343c55f28c3260bbf0bd2de2da634a",
-  "copiedScientificFilesUnchanged": 25,
-  "exactCertificateVerification": {
-    "passed": true,
-    "python": "3.12.14",
-    "elapsedSeconds": 31.389999999999418,
-    "fixtureSha256": "89c4a74ed3c54a05df04d8176cc3e8105dcb84040799718314ab5246bcfd58d7",
-    "ratioLower": 1.5002782835820574,
-    "closedToleranceInterval": [
-      0.056736,
-      0.137809
-    ]
+  "updatedAtUtc": "2026-10-16T15:39:52.972324+00:00",
+  "title": "Response Tolerance and Spectral Regularity in Reference-Matched Reflectance Design",
+  "scientificRevisionSourceCommit": "dcff723fbc1055cbb9af348c3d3637689cd9fe83",
+  "titleRevision": "R141 approved title; no scientific changes",
+  "exactVerificationInheritedFrom": "R140 isolated package, unchanged verifier and fixture copied by hash",
+  "fixtureSha256": "89c4a74ed3c54a05df04d8176cc3e8105dcb84040799718314ab5246bcfd58d7",
+  "r140ExactVerificationPassed": true,
+  "r141IsolatedOverleafBuildsPassed": true,
+  "matlab": "R140 rendering retained; no MATLAB run required for title-only R141",
+  "pdfPages": {
+    "main": 11,
+    "main-review": 11,
+    "supplement": 8
   },
-  "independentWorkingDirectory": true,
-  "requiresOriginalRepository": false,
-  "personalPathsOrCredentialPatternsDetected": false,
-  "pdfs": {
-    "main": {
-      "pages": 10,
-      "sha256": "7b5dc9a6c353e0269946680f1621babe4450acc319805d79f91857fdfe65e7b9"
-    },
-    "supplement": {
-      "pages": 8,
-      "sha256": "5b9fbcbc75f624a22b605cd1fea3afae0dbc1f80ddf6aa52a10763ccbde879e6"
-    }
-  },
-  "pdfValidation": "Unchanged PDFs inherited from the successfully compiled and visually inspected source package; no new typesetting in this export.",
-  "matlab": "Unchanged base-MATLAB presentation code; original rendering validated with R2025b. No new MATLAB run in this export.",
-  "independentHumanReview": false,
+  "zipSha256": "e70ea26c71115929b64c18eeaee25a752f0cafac30748699489e94b1d913d649",
   "newOptimizerCalls": 0,
-  "submissionStatus": "Author-review draft; not submitted"
+  "independentHumanReview": false,
+  "submissionStatus": "Not submitted; author metadata and declarations remain blank"
 }

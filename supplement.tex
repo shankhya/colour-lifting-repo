@@ -1,12 +1,12 @@
-% Internal companion draft; no author information is added to this template.
+% Revised supplement; author information remains blank at user request.
 \documentclass[9pt]{osa-supplemental-document}
 \setboolean{shortarticle}{false}
-\usepackage{amsmath,amsthm,booktabs}
+\usepackage{amsmath,amsthm,booktabs,upquote}
 % Keep equation callouts consistent with the main article.
 \renewcommand{\eqref}[1]{\textup{(\ref{#1})}}
 \newtheorem{proposition}{Proposition}
 \renewcommand{\theproposition}{S\arabic{proposition}}
-\title{Spectral regularity increases the absolute benefit of response tolerance in reference-matched reflectance design: supplemental document}
+\title{Response Tolerance and Spectral Regularity in Reference-Matched Reflectance Design: supplemental document}
 \author{}
 \begin{abstract}
 This document gives the continuous-function support bounds, mixture certificates, tolerance-interval proof, and response-cost calculation supporting the main article. It also proves the smooth-spectrum and input-continuity statements and derives the separate direction and norm comparisons. The accompanying exact fixture contains the rational spectra, response functions, and multipliers needed to verify the numerical inequalities without optimization.
@@ -15,8 +15,6 @@ This document gives the continuous-function support bounds, mixture certificates
 \begin{document}
 \maketitle
 \par\medskip
-\noindent\textit{Internal companion draft for author revision.}
-
 \section{Input functions and exact representation}
 The response interval is $I=[380,780]$ nm, with nodes $\lambda_i=380+i$ for $i=0,\ldots,400$. The CIE 1931 $2^\circ$ observer and the D65, A, and FL11 illuminants are specified by the datasets in Table~\ref{tab:sources}. The FL11 column is selected from the fluorescent-illuminant dataset. Decimal tabulated values are read as exact rational numbers. Each observer and illuminant component is interpolated linearly between nodes.
 
@@ -135,7 +133,22 @@ At $r=0.10$, exact cross-multiplication proves that the first lower bound exceed
  b_{\mathcal S}(r)-b_{\mathcal S}(0)&\in(0.1855354858,0.2762275169),\\
  b_{\mathcal U}(r)-b_{\mathcal U}(0)&\in(0.1292643479,0.1499960386).
 \end{align}
-The lower difference is greater than 0.0355394472. The exact penalty obeys $d(0)<0.1733445365$, giving the main article's conservative reduction fraction of 0.2160. The stricter rational calculation gives a lower fraction exceeding 0.21600115.
+The lower difference is greater than 0.0355394472, proving a decrease of the raw regularity penalty. To obtain its relative decrease, use the following outward display bounds from Table 1 of the main article:
+\begin{align}
+ d(0)&\geq0.3817259867-0.2171923873
+       =0.1645335994=:d_0^-,\\
+ 0\leq d(0.10)&\leq0.5317220254-0.4027278731
+       =0.1289941523=:d_1^+.
+\end{align}
+Since $d_0^->0$ and $d_1^+\geq0$,
+\begin{equation}
+ \frac{d(0)-d(0.10)}{d(0)}
+ =1-\frac{d(0.10)}{d(0)}
+ \geq1-\frac{d_1^+}{d_0^-}
+ =\frac{355394471}{1645335994}>0.2160.
+ \label{eq:penaltyfraction}
+\end{equation}
+This ratio calculation proves the claimed reduction of more than 21.60\%. The full rational certificates give a slightly stronger lower bound, exceeding 0.21600115.
 
 \subsection{Feasible interpolation below the anchor tolerance}
 Let $(z_0,b_0)$ be the exact S witness and $(z_1,b_1)$ the witness at $r=0.10$. For $0\leq t\leq1$, define
@@ -233,7 +246,7 @@ Normalize by amplitude, $v_j=e_j/\beta$. The constraints become
  \|v_j\|_2\leq\rho K\|c_j\|_2,\quad
  \mu_j^{\mathsf T}v_j\leq L_{\mathcal S}/\beta-C_j.
 \end{equation}
-These sets decrease with $\beta$. At $\beta_*$ the bound for the actual X response per unit amplitude is positive, and the A-Y upper per unit amplitude is negative. Multiplying by any larger feasible amplitude preserves and strengthens the absolute inequalities. This proves the all-feasible quantifier above the threshold.
+These sets decrease with $\beta$. At $\beta_*$ the bound for the actual X response per unit amplitude is positive, and the A-Y upper per unit amplitude is negative. Multiplying by any larger feasible amplitude preserves and strengthens the absolute inequalities. This proves the all-feasible quantifier at or above the threshold. The exact-response comparator is the same class $\mathcal S$ for the same prescribed transformation: its X increments are bounded above by $B_0h_{j,X}$.
 
 If $e_{1,Y}\geq0$ and $\mu_{1,Y}>0$, the most negative support contribution in the A ball occurs with $e_{1,Y}=0$. Therefore
 \begin{equation}
@@ -267,7 +280,19 @@ The correction then fits both spectral margins and restores all nine moments exa
 The response constraints are positively homogeneous in $(Mz,\beta)$. Thus $(z_\infty,\theta\beta)$ is feasible whenever $(z,\beta)$ is feasible. All mixture responses follow from the exact generator moments. Taking $\theta\uparrow1$, and using inclusion for the reverse inequality, proves equality of the original and smooth-subclass capacity suprema. The construction does not impose a common second-derivative bound or prove smooth attainment at an endpoint amplitude.
 
 \section{Continuity with respect to input functions}
-Let $p$ index response kernels converging componentwise in $L^1(I)$ to those at $p_0$, with continuous target vectors $h_{p,j}$ and $h_{p,0}=0$. The derivative interval is fixed with $\ell<0<u$. Assume full moment rank at $p_0$, uniformly positive $\|c_p(w)\|_2$ on the compact mixture simplex, and a nonzero target. Define $K_p$ by maximization over that simplex or over the named lamps. Uniform convergence of numerator and denominator gives continuity of $K_p>0$.
+For each input parameter $p$, define the stacked moment operator, target, and generator-error vector by
+\begin{align}
+ M_pz&=(A_{p,0}z,A_{p,1}z,A_{p,2}z)^{\mathsf T}\in\mathbb R^9,\\
+ h_p&=(h_{p,0},h_{p,1},h_{p,2})^{\mathsf T},\qquad
+ e=M_{p_0}z-\beta h_{p_0}.
+\end{align}
+Each displayed component block has three coordinates. For mixture weights $w$, write $e(w)=\sum_jw_je_j$, and define $c_p(w)$ and $h_p(w)$ by the same generator sums.
+
+\begin{proposition}[Continuity at a fixed tolerance]\label{prop:continuity}
+Fix $0\leq\rho<1$ and one of the two illumination domains. Suppose the response kernels converge componentwise in $L^1(I)$ as $p\to p_0$, the targets vary continuously with $h_{p,0}=0$, and the target at $p_0$ is nonzero. Assume that $M_{p_0}$ has rank nine and that incident-response norms are uniformly positive on the selected compact illumination domain in a neighborhood of $p_0$. Keep the spectral classes fixed, with $\ell<0<u$. Then, for $\mathcal C=\mathcal U,\mathcal S$, $b_{\mathcal C,p}(\rho)\to b_{\mathcal C,p_0}(\rho)$. The bonus difference is therefore continuous at every fixed $\rho<1$.
+\end{proposition}
+\begin{proof}
+Uniform convergence of $h_p(w)$ and $c_p(w)$ on the illumination domain makes $K_p$ continuous and locally positive.
 
 The preceding smooth basis has moment matrices $V_p\to V_{p_0}$. Thus $R_pq=\sum_i\psi_i(V_p^{-1}q)_i$ is a locally uniformly bounded right inverse in both the function and derivative norms. Small positive multiples of $R_ph_p$ are exact feasible designs, ensuring positive exact capacity nearby.
 
@@ -293,7 +318,8 @@ The error becomes $(1-\delta)e(w)$, and its cone slack is at least $\rho\delta\b
  q_p=d_p-M_p(\theta\bar z),\quad
  z_p=\theta\bar z+R_pq_p.
 \end{equation}
-The corrected spectrum has reference error zero and mixture errors $\theta(1-\delta)e(w)$. Continuity preserves the strict cone slack, and the small correction fits the spectral margins. Letting $\theta\uparrow1$ and $\delta\downarrow0$ proves lower semicontinuity. Capacities, and hence the bonus difference at fixed $\rho$, are continuous. The strict central inequality persists in some neighborhood of the frozen inputs. This argument gives no numerical radius for measurement or interpolation uncertainty.
+The corrected spectrum has reference error zero and mixture errors $\theta(1-\delta)e(w)$. Continuity preserves the strict cone slack, and the small correction fits the spectral margins. Letting $\theta\uparrow1$ and $\delta\downarrow0$ proves lower semicontinuity. Capacities, and hence the bonus difference at fixed $\rho$, are continuous. \end{proof}
+The strict central inequality persists in some neighborhood of the frozen inputs. This argument gives no numerical radius for measurement or interpolation uncertainty.
 
 \section{Separate direction and norm comparisons}
 \subsection{The X and Z directions in common units}
@@ -314,7 +340,7 @@ Let $D$ be an invertible real $3\times3$ matrix used on error, target, and incid
 \begin{equation}
  \kappa^{-2}J_I\leq J_D\leq\kappa^2J_I.
 \end{equation}
-For $t\geq\kappa^2$ this yields
+For $1\leq\kappa^2\leq t$ and $rt<1$, this yields the finite-capacity comparison
 \begin{equation}
  b_{\mathcal C,I}(r/t)\leq b_{\mathcal C,D}(r)\leq b_{\mathcal C,I}(rt),
  \qquad b_{\mathcal C,D}(0)=b_{\mathcal C,I}(0).
@@ -349,7 +375,7 @@ and, from MATLAB in the same directory,
 run_paper_results('verify')
 run_paper_results('render')
 \end{verbatim}
-Rendering uses the verified scalar export and checks its fixture hash. It creates deterministic plots and tables without optimization. The saved rendering was produced with MATLAB R2025b; the exact checker was verified with Python 3.12.14. The display values use floating-point conversion, while the certificates use rational arithmetic and outward radical enclosures.
+Rendering uses the verified scalar export and checks its fixture hash. It creates deterministic plots and tables without optimization. The saved rendering was produced with MATLAB R2025b; the exact checker was verified with Python 3.12.14. Plot coordinates and response summaries use floating-point conversion. Capacity and bonus CSV endpoints are generated as outward decimal strings directly from exact rational bounds. The certificates use rational arithmetic and outward radical enclosures; the verifier also checks the displayed 21.60\% calculation and the printed response inequalities.
 
 The original tolerant S solver's non-success flag is retained in the fixture. Its lower bound is justified by the subsequently repaired exact feasible spectrum, not by a claim of successful optimizer termination. The support endpoints are rigorous bounds, not necessarily attained extrema. The smooth-spectrum and continuity propositions are analytical proofs; the arithmetic checker is not a proof-assistant formalization of them.
 
