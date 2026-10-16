@@ -2,11 +2,10 @@
 * -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 # Preserve official third-party template bytes and intentional TeX spaces.
 # Authored manuscript sources retain the repository's normal whitespace checks.
-/jabbrv-ltwa-all.ldf -text -whitespace
-/jabbrv-ltwa-en.ldf -text -whitespace
-/jabbrv.sty -text -whitespace
-/optica-article.cls -text -whitespace
-/opticajnl.bst -text -whitespace
-/opticajnlnt.bst -text -whitespace
-/osa-supplemental-document.cls -text -whitespace
-/styles/opticajournal.sty -text -whitespace
+/manuscript/jabbrv-ltwa-all.ldf -text -whitespace
+/manuscript/jabbrv-ltwa-en.ldf -text -whitespace
+/manuscript/jabbrv.sty -text -whitespace
+/manuscript/optica-article.cls -text -whitespace
+/manuscript/opticajnl.bst -text -whitespace
+/manuscript/osa-supplemental-document.cls -text -whitespace
+/manuscript/styles/opticajournal.sty -text -whitespace

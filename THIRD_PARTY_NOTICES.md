@@ -1,10 +1,10 @@
 # Source and template attribution
 
-The supplied `optica-article.cls`, `styles/opticajournal.sty`, `opticajnl.bst`, `opticajnlnt.bst`, `jabbrv.sty`, and language files were copied from the official Optica universal template archive:
+The files in `manuscript/` named `optica-article.cls`, `styles/opticajournal.sty`, `opticajnl.bst`, `jabbrv.sty`, and the two language files were copied from the official Optica universal template archive:
 
 https://opg.optica.org/resources/author/templates/latex-universal-template.zip
 
-The `osa-supplemental-document.cls` was copied from:
+The `manuscript/osa-supplemental-document.cls` was copied from:
 
 https://opg.optica.org/resources/author/templates/latex-supplemental-document.zip
 

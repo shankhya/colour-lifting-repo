@@ -2,7 +2,7 @@
 from pathlib import Path
 import hashlib
 
-root = Path(__file__).resolve().parent
+root = Path(__file__).resolve().parents[2]
 count = 0
 for line in (root / 'SHA256SUMS').read_text(encoding='utf-8').splitlines():
     expected, name = line.split('  ', 1)

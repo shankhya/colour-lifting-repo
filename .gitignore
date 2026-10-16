@@ -1,5 +1,6 @@
 # Local build and generated presentation output
 *.aux
+*.bbl
 *.blg
 *.log
 *.fls
@@ -8,6 +9,8 @@
 *.synctex.gz
 *.xdv
 *.toc
+# Build archives duplicate the manuscript source tree.
+*.zip
 __pycache__/
 *.py[cod]
 reproducibility/results/figures/

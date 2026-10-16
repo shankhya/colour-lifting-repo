@@ -1,0 +1,36 @@
+{
+  "updatedAtUtc": "2026-10-16T16:04:41.663706+00:00",
+  "title": "Response Tolerance and Spectral Regularity in Reference-Matched Reflectance Design",
+  "sourceCommit": "fdd6b381cc27e19f6e43e9326adbf5a981823ede",
+  "scope": "Repository organization only; manuscript, figures, data and scientific code unchanged",
+  "fixtureSha256": "89c4a74ed3c54a05df04d8176cc3e8105dcb84040799718314ab5246bcfd58d7",
+  "exactVerification": {
+    "passed": true,
+    "python": "3.12.14",
+    "elapsedSeconds": 19.968000000000757,
+    "ratioLower": 1.5002782835820574,
+    "closedToleranceInterval": [
+      0.056736,
+      0.137809
+    ]
+  },
+  "isolatedTexBuilds": {
+    "passed": true,
+    "compiler": "Tectonic 0.17.0 (XeTeX/BibTeX)",
+    "generatedBibliographyFromSource": true,
+    "pdfs": {
+      "main": {
+        "pages": 11,
+        "allPageContentStreamsMatchRetainedPdf": true
+      },
+      "supplement": {
+        "pages": 8,
+        "allPageContentStreamsMatchRetainedPdf": true
+      }
+    }
+  },
+  "matlab": "Existing MATLAB R2025b plots retained; no new MATLAB run",
+  "newOptimizerCalls": 0,
+  "independentHumanReview": false,
+  "submissionStatus": "Not submitted; author metadata and declarations remain blank"
+}
