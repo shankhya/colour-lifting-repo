@@ -48,21 +48,3 @@ python -B tools/verify_paper_results.py --emit results/research/R135-paper-verif
 ```
 
 This optional command overwrites the display export and records a new elapsed time, so its checksum will differ. Start with the read-only commands above to validate the distributed files.
-
-## Build the article and supplement
-
-The official Optica template dependencies are included. From the root, use a TeX Live or MiKTeX installation:
-
-```text
-latexmk -pdf main.tex
-latexmk -pdf supplement.tex
-```
-
-Alternatively, use Tectonic (tested with 0.17.0):
-
-```text
-tectonic --keep-intermediates main.tex
-tectonic --keep-intermediates supplement.tex
-```
-
-PDFs are supplied, so a TeX installation is unnecessary for reading the paper or verifying its arithmetic. Author revision and the declarations described in `author-notes/EDITORIAL_STATUS.md` precede submission. A private GitHub URL alone does not grant access; the owner must arrange the journal's approved access route when sharing.
