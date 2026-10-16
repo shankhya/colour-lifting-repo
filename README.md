@@ -10,7 +10,7 @@ This private repository contains the selected paper, detailed proofs, exact comp
 - `supplement.pdf`, `supplement.tex`: detailed analytical proofs and certificate definitions.
 - `figures/`, `tables/`: four vector figures and three numerical tables used by the paper.
 - `reproducibility/`: exact CIE-derived input fixture, feasible spectra, support certificates, saved display values, Python verifier and MATLAB plotting function.
-- `PROVENANCE.md`, `THIRD_PARTY_NOTICES.md`: origin, preparation record, source attribution and license terms.
+- `THIRD_PARTY_NOTICES.md`: origin, preparation record, source attribution and license terms.
 - `validation.json`, `SHA256SUMS`, `verify_package.py`: distribution validation and integrity checks.
 
 Internal research logs, schedules, credentials, machine configuration, caches, unrelated experiments and the original Git history are outside this distribution. Scientific inputs and unsuccessful-solver provenance inside the exact fixture are preserved.
