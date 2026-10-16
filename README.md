@@ -1,6 +1,8 @@
 # Response Tolerance and Spectral Regularity in Reference-Matched Reflectance Design
+Shankhya Debnath
+Department of Printing Technology, Regional Institute of Printing Technology, Kolkata, India.
 
-Manuscript, supplement and reproducibility files for JOSA A. Author names, affiliations and declarations remain blank.
+Manuscript, supplement and reproducibility files.
 
 ## Files
 
