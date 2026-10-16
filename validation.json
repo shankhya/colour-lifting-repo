@@ -1,0 +1,34 @@
+{
+  "preparedAtUtc": "2026-10-16T11:09:24.404295+00:00",
+  "sourceCommit": "35563a7cec343c55f28c3260bbf0bd2de2da634a",
+  "copiedScientificFilesUnchanged": 25,
+  "exactCertificateVerification": {
+    "passed": true,
+    "python": "3.12.14",
+    "elapsedSeconds": 31.389999999999418,
+    "fixtureSha256": "89c4a74ed3c54a05df04d8176cc3e8105dcb84040799718314ab5246bcfd58d7",
+    "ratioLower": 1.5002782835820574,
+    "closedToleranceInterval": [
+      0.056736,
+      0.137809
+    ]
+  },
+  "independentWorkingDirectory": true,
+  "requiresOriginalRepository": false,
+  "personalPathsOrCredentialPatternsDetected": false,
+  "pdfs": {
+    "main": {
+      "pages": 10,
+      "sha256": "7b5dc9a6c353e0269946680f1621babe4450acc319805d79f91857fdfe65e7b9"
+    },
+    "supplement": {
+      "pages": 8,
+      "sha256": "5b9fbcbc75f624a22b605cd1fea3afae0dbc1f80ddf6aa52a10763ccbde879e6"
+    }
+  },
+  "pdfValidation": "Unchanged PDFs inherited from the successfully compiled and visually inspected source package; no new typesetting in this export.",
+  "matlab": "Unchanged base-MATLAB presentation code; original rendering validated with R2025b. No new MATLAB run in this export.",
+  "independentHumanReview": false,
+  "newOptimizerCalls": 0,
+  "submissionStatus": "Author-review draft; not submitted"
+}

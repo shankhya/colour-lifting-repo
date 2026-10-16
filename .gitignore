@@ -1,0 +1,17 @@
+# Local build and generated presentation output
+*.aux
+*.blg
+*.log
+*.fls
+*.fdb_latexmk
+*.out
+*.synctex.gz
+*.xdv
+*.toc
+__pycache__/
+*.py[cod]
+reproducibility/results/figures/
+.env
+.env.*
+*.pem
+*.key
