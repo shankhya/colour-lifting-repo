@@ -240,7 +240,7 @@ def verify(path):
     return result
 
 if __name__=='__main__':
-    ap=argparse.ArgumentParser();ap.add_argument('--fixture',type=Path,default=ROOT/'results/research/R135-paper-fixture.json');ap.add_argument('--emit',type=Path);args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--fixture',type=Path,default=ROOT/'results/research/paper-fixture.json');ap.add_argument('--emit',type=Path);args=ap.parse_args()
     out=verify(args.fixture)
     if args.emit: args.emit.write_text(json.dumps(out,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:out[k] for k in ['passed','python','elapsedSeconds','fixtureSha256','ratioLower','closedToleranceInterval']},indent=2))

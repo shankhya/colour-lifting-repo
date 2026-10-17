@@ -1,13 +1,14 @@
 {
-  "updatedAtUtc": "2026-10-17T04:01:16.727087+00:00",
+  "updatedAtUtc": "2026-10-17T05:18:31.409801+00:00",
   "title": "Response Tolerance and Spectral Regularity in Reference-Matched Reflectance Design",
-  "sourceCommit": "f89deec7c824a80c301439fe48b8e5a6d59b6a07",
-  "scope": "Layout-only ten-page article; scientific wording, equations, citations, figure assets, supplement, data and code unchanged",
+  "sourceCommit": "c824167",
+  "scope": "Added cover letter and title page in Word; restored verified fixture after remote rename left it blank; updated readers to the user-selected filenames. Article and supplement unchanged.",
   "fixtureSha256": "89c4a74ed3c54a05df04d8176cc3e8105dcb84040799718314ab5246bcfd58d7",
   "exactVerification": {
     "passed": true,
     "python": "3.12.14",
-    "elapsedSeconds": 19.968000000000757,
+    "elapsedSeconds": 35.75,
+    "fixtureSha256": "89c4a74ed3c54a05df04d8176cc3e8105dcb84040799718314ab5246bcfd58d7",
     "ratioLower": 1.5002782835820574,
     "closedToleranceInterval": [
       0.056736,
@@ -32,8 +33,7 @@
   "matlab": "Existing MATLAB R2025b plots retained; no new MATLAB run",
   "newOptimizerCalls": 0,
   "independentHumanReview": false,
-  "submissionStatus": "Not submitted; manuscript author fields and declarations remain blank",
-  "exactVerificationInheritedFrom": "R142; scientific verifier, fixture and export unchanged by SHA-256; no rerun for layout-only change",
+  "submissionStatus": "Not submitted. Word title page and cover letter contain author details; main.tex author fields and funding/disclosure declarations remain unchanged.",
   "visualLayoutReview": {
     "mainPagesInspected": 10,
     "passed": true
@@ -45,5 +45,16 @@
     "figure2WidthLinewidth": 0.9,
     "bodyAndReferenceFontSizesUnchanged": true,
     "pageMarginsUnchanged": true
+  },
+  "submissionDocuments": {
+    "format": "DOCX",
+    "onePageEach": true,
+    "nativeWordRenderAndVisualReviewPassed": true
+  },
+  "fixtureFilenameRepair": {
+    "path": "results/research/paper-fixture.json",
+    "contentRestoredFromCommit": "7ef7d62fcf79311840376c7c09f02252a9aaefa9",
+    "restoredBytesMatchPreviouslyVerifiedHash": true,
+    "newUserFilenamesRetained": true
   }
 }

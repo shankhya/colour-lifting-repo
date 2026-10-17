@@ -7,6 +7,7 @@ Manuscript, supplement and reproducibility files.
 ## Files
 
 - [`manuscript/`](manuscript/): `main.tex` and `main.pdf`, `supplement.tex` and `supplement.pdf`, bibliography, four vector figures, and the required Optica template files.
+- [`manuscript/cover-letter.docx`](manuscript/cover-letter.docx) and [`manuscript/title-page.docx`](manuscript/title-page.docx): editable submission documents with the author name, affiliation and corresponding email.
 - [`reproducibility/`](reproducibility/): exact input data and certificates, Python verification scripts, MATLAB plotting code, three numerical tables, and the validation record.
 - [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md): CIE data attribution and template license notices.
 - [`SHA256SUMS`](SHA256SUMS): file integrity checksums.
@@ -37,7 +38,7 @@ Both commands are read-only and use only Python's standard library. They require
 
 Successful verification reports an absolute-bonus ratio lower bound of about `1.5002782835820574` and a certified tolerance interval `[0.056736, 0.137809]`. It reconstructs the integrated inputs and checks rank, exact feasible spectra, all-mixture constraints, full-class supports and the quantitative comparison/response certificates. The smooth-spectrum and input-continuity proofs are in the supplement.
 
-The frozen fixture is `reproducibility/results/research/R135-paper-fixture.json`; the saved numerical export is `R135-paper-verified.json` in the same directory. The `R135` identifiers preserve source traceability.
+The frozen fixture is `reproducibility/results/research/paper-fixture.json`; the saved numerical export is `paper-verified.json` in the same directory. The frozen contents preserve the original research results.
 
 ## Reproduce figures and tables
 
@@ -53,7 +54,7 @@ The code uses base MATLAB and a JVM for SHA-256; no optimization toolbox is requ
 To regenerate the numerical export from the exact checks, run from `reproducibility/`:
 
 ```text
-python -B tools/verify_paper_results.py --emit results/research/R135-paper-verified.json
+python -B tools/verify_paper_results.py --emit results/research/paper-verified.json
 ```
 
 This optional command overwrites the saved export and records a new elapsed time, changing its checksum. Run the read-only verification commands first. Figure binary hashes can vary with rendering software; the certified numerical quantities are the reproducibility target.

@@ -6,8 +6,8 @@ if nargin<1, mode='verify'; end
 root=fileparts(mfilename('fullpath'));
 if nargin<2, outputDirectory=fullfile(root,'results','figures','paper'); end
 assert(any(strcmp(mode,{'verify','render'})),'Mode must be verify or render');
-v=jsondecode(fileread(fullfile(root,'results/research/R135-paper-verified.json')));
-assert(v.passed && strcmp(sha256(fullfile(root,'results/research/R135-paper-fixture.json')),v.fixtureSha256));
+v=jsondecode(fileread(fullfile(root,'results/research/paper-verified.json')));
+assert(v.passed && strcmp(sha256(fullfile(root,'results/research/paper-fixture.json')),v.fixtureSha256));
 assert(v.bonuses.S(1)>1.5*v.bonuses.U(2) && v.bonuses.U(1)>0);
 assert(abs(v.ratioLower-v.bonuses.S(1)/v.bonuses.U(2))<1e-13);
 assert(v.capacities.S0(2)<v.capacities.U0(1) && v.capacities.S1(2)<v.capacities.U1(1));
