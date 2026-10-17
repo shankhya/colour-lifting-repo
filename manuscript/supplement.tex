@@ -6,10 +6,9 @@
 \renewcommand{\eqref}[1]{\textup{(\ref{#1})}}
 \newtheorem{proposition}{Proposition}
 \renewcommand{\theproposition}{S\arabic{proposition}}
-\title{Response Tolerance and Spectral Regularity in Reference-Matched Reflectance Design: supplemental document}
+\title{Response Tolerance and Spectral Regularity in Reference-Matched Reflectance Design: supplementary material}
 \author{Shankhya Debnath}
-\address{Department of Printing Technology, Regional Institute of Printing Technology, Kolkata, India}
-\email{shankhya@riptkolkata.org}
+
 \begin{abstract}
 This document gives the continuous-function support bounds, mixture certificates, tolerance-interval proof, and response-cost calculation supporting the main article. It also proves the smooth-spectrum and input-continuity statements and derives the separate direction and norm comparisons. The accompanying exact fixture contains the rational spectra, response functions, and multipliers needed to verify the numerical inequalities without optimization.
 \end{abstract}
@@ -359,32 +358,4 @@ Multiplying the difference by $(1-r)(t-kr)(P-rWt)>0$ gives
 \end{multline}
 The quadratic coefficient is negative, $q_D'(1)<0$, and $q_D(1)>0$. Exact rational evaluation also gives $q_D(1.052918^2)>0$, with all denominators positive over that interval. Since the derivative decreases, the polynomial is positive throughout $1\leq t\leq1.052918^2$. This proves the sufficient condition-number bound in the main article. At $\kappa\leq1.02$, the lower S and upper U bounds are approximately 0.1475673909 and 0.1150759345. No assumption is made that the lamp attaining $K_D$ remains unchanged.
 
-\section{Reproduction and verification status}
-The accompanying directory \texttt{reproducibility/} is a self-contained subset of the research files. It contains the exact fixture, the verified display export, a standard-library Python checker, and a MATLAB presentation function. From that directory, run
-\begin{verbatim}
-python -B tools/verify_paper_results.py
-\end{verbatim}
-The default is read-only. It reconstructs the integrated model, checks rank, verifies the five selected X/Z witnesses, evaluates full-class supports, and checks the absolute, interval, cost, and scope inequalities. It needs no optimizer, network access, machine configuration, or historical project imports. Assertions must remain enabled; the script rejects Python optimization mode.
-
-For an explicitly writable export followed by presentation checks, use
-{\footnotesize
-\begin{verbatim}
-python -B tools/verify_paper_results.py --emit results/research/R135-paper-verified.json
-\end{verbatim}
-}
-and, from MATLAB in the same directory,
-\begin{verbatim}
-run_paper_results('verify')
-run_paper_results('render')
-\end{verbatim}
-Rendering uses the verified scalar export and checks its fixture hash. It creates deterministic plots and tables without optimization. The saved rendering was produced with MATLAB R2025b; the exact checker was verified with Python 3.12.14. Plot coordinates and response summaries use floating-point conversion. Capacity and bonus CSV endpoints are generated as outward decimal strings directly from exact rational bounds. The certificates use rational arithmetic and outward radical enclosures; the verifier also checks the displayed 21.60\% calculation and the printed response inequalities.
-
-The original tolerant S solver's non-success flag is retained in the fixture. Its lower bound is justified by the subsequently repaired exact feasible spectrum, not by a claim of successful optimizer termination. The support endpoints are rigorous bounds, not necessarily attained extrema. The smooth-spectrum and continuity propositions are analytical proofs; the arithmetic checker is not a proof-assistant formalization of them.
-
-The frozen fixture's SHA-256 digest is
-\begin{quote}\ttfamily\small
-89c4a74ed3c54a05df04d8176cc3e8105\\
-dcb84040799718314ab5246bcfd58d7.
-\end{quote}
-The line break and final punctuation are not part of the digest. The package preserves input and source hashes, source dataset attribution, and the history of the numerical certificates. Author details and publication declarations are maintained separately from these technical files.
 \end{document}
