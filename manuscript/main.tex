@@ -28,18 +28,19 @@
 \newtheorem{proposition}{Proposition}
 \begin{document}
 \title{Response Tolerance and Spectral Regularity in Reference-Matched Reflectance Design}
-\author{}
-\address{}
-\email{}
+\author{Shankhya Debnath}
+\address{Department of Printing Technology, Regional Institute of Printing Technology, Kolkata, India}
+\email{shankhya@riptkolkata.org}
+
 \begin{abstract*}
 Response tolerance changes the capacity cost of spectral regularity. We study passive reflectances that match a flat 50\% reference under D65 and approximate a prescribed transformation under A and FL11. At global effect-relative XYZ tolerance 0.10, the capacity gain beyond unchanged-spectrum target inflation is over 50\% larger with derivative bounds than with passivity alone. Exact certificates prove strict gain ordering over a tolerance interval for both named-illuminant and all-mixture constraints. Every feasible derivative-bounded design at or above a certified attainable amplitude exceeds that class's exact X-response limits for the same transformation under A and FL11, with a necessary Y deficit under A.
 \end{abstract*}
 \thispagestyle{plain}
 
 \section{Introduction}
-A passive material can match a reference under one illuminant and produce a different color response under another. Designing that difference requires a single reflectance spectrum to satisfy several response constraints simultaneously. Spectral regularity further restricts the available spectra. An exact response specification and an approximate one can therefore incur different costs from the same regularity constraint. The question addressed here is whether a fixed response allowance can recover more absolute transformation capacity in a regularity-constrained class than it adds to the unrestricted passive class.
+Colour appearance of a passive material can match a reference under one illuminant and produce a different color response under another. This phenomenon is known as metamerism. Designing that difference requires a single reflectance spectrum to satisfy several response constraints simultaneously. Spectral regularity further restricts the available spectra. An exact response specification and an approximate one can therefore incur different costs from the same regularity constraint. The question addressed here is whether a fixed response allowance can recover more absolute transformation capacity in a regularity-constrained class than it adds to the unrestricted passive class.
 
-The ingredients of this problem have substantial precedents. Metamer sets describe the spectra sharing a specified response~\cite{Finlayson2005}. Smoothest reflectance reconstruction selects among such spectra through a regularity objective~\cite{vanTrigt1990,Burns2020}. Li and Luo combined reference matching, passivity, multi-illuminant color inconstancy, and spectral smoothness~\cite{Li2006}; Li \emph{et al.} developed a reflectance-based color gamut using related constraints~\cite{Li2007}. Paramer formulations admit response neighborhoods and permit spectral gamut mapping across multiple illuminants~\cite{Urban2011,Morovic2021}. These approaches establish the relevance of approximate matching and regularized spectral design. The Li--Luo formulations seek low multi-illuminant inconstancy subject to reflectance and smoothness conditions. Here the transformation direction is fixed, and the objective is its maximum attainable amplitude at a specified error allowance. We compare the resulting absolute capacity increments in two nested spectral classes.
+The presented problem have substantial precedents. Metamer sets describe the spectra sharing a specified response~\cite{Finlayson2005}. Smoothest reflectance reconstruction selects among such spectra through a regularity objective~\cite{vanTrigt1990,Burns2020}. Li and Luo combined reference matching, passivity, multi-illuminant color inconstancy, and spectral smoothness~\cite{Li2006}, Li \emph{et al.} developed a reflectance-based color gamut using related constraints~\cite{Li2007}. Paramer formulations admit response neighborhoods and permit spectral gamut mapping across multiple illuminants~\cite{Urban2011,Morovic2021}. These approaches establish the relevance of approximate matching and regularized spectral design. The Li--Luo formulations seek low multi-illuminant inconstancy subject to reflectance and smoothness conditions. Here the transformation direction is fixed, and the objective is its maximum attainable amplitude at a specified error allowance. We compare the resulting absolute capacity increments in two nested spectral classes.
 
 Recent operator treatments describe color formation through kernels, quotient spaces, and physically constrained response sets~\cite{Morovic2026Quotient}, and express metamer mismatching and limits of linear chromatic adaptation through a residual operator~\cite{Morovic2026Mismatch}. Those results characterize information loss and prediction between viewing conditions. Our design problem fixes the response transformation and optimizes a passive spectrum that preserves a reference match. Its central comparison concerns how spectral regularity changes the additional amplitude made available by response tolerance.
 
@@ -49,7 +50,7 @@ We compare these increments in common absolute units. The capacity is the larges
 
 The response consequences are established separately from the target-amplitude comparison. At or above a certified attainable amplitude, every feasible regularity-constrained design exceeds the actual X increment of every exact design in the same derivative-bounded class for the prescribed transformation under both additional illuminants. Every such design also incurs a positive Y deficit under A. These universal bounds identify a benefit and a necessary cost of the high-capacity regime, beyond the behavior of one computed spectrum.
 
-The analysis uses support inequalities and exact feasibility certificates, drawing on standard convex methods~\cite{Boyd2004}. Its contribution is the quantitative relation between spectral regularity, absolute tolerance benefit, and actual multi-illuminant response. The upper bounds cover measurable or absolutely continuous reflectances on the full wavelength interval. The lower bounds are explicit spectra. Together they establish the conclusions without requiring a numerical optimizer to locate an exact extremum.
+The analysis uses support inequalities and exact feasibility certificates, drawing on standard convex methods~\cite{Boyd2004}. Its contribution is the quantitative relation between spectral regularity, absolute tolerance benefit, and actual multi-illuminant response. The upper bounds cover measurable or absolutely continuous reflectances on the full wavelength interval. The lower bounds are explicit spectra. 
 
 \section{Reference-matched spectral design}
 \subsection{Response model and spectral classes}
@@ -61,7 +62,7 @@ Let $I=[380,780]$ nm and let $r:I\to[0,1]$ be a passive, nonfluorescent reflecta
 \end{equation}
 where $f_j$ is the three-component illuminant--observer response kernel. The actual tristimulus vector is $c_j/2+A_jz$.
 
-We use the CIE 1931 $2^\circ$ observer and illuminants D65, A, and FL11~\cite{CIEObserver,CIED65,CIEA,CIEFL}. Each source function is specified by piecewise-linear interpolation of the frozen tabulated values on the 1 nm grid. Illuminant--observer products are therefore piecewise quadratic and are integrated as products. Each illuminant is scaled so that the perfect diffuser has $Y=100$. The model treats the interpolated functions as its exact inputs; this convention is especially relevant to the structured FL11 spectrum. Supplement 1 gives the source identifiers, normalization, and certificate representation.
+We use the CIE 1931 $2^\circ$ observer and illuminants D65, A, and FL11~\cite{CIEObserver,CIED65,CIEA,CIEFL}. Each source function is specified by piecewise-linear interpolation of the frozen tabulated values on the 1 nm grid. Illuminant--observer products are therefore piecewise quadratic and are integrated as products. Each illuminant is scaled so that the perfect diffuser has $Y=100$. The model treats the interpolated functions as its exact inputs; this convention is especially relevant to the structured FL11 spectrum. Supplementary material gives the source identifiers, normalization, and certificate representation.
 
 The unrestricted class and the derivative-bounded class are
 \begin{align}
@@ -78,9 +79,9 @@ Use index $0$ for D65, $1$ for A, and $2$ for FL11. The primary transformation i
  \qquad h_j=H_Xc_j.
  \label{eq:HX}
 \end{equation}
-At amplitude $\beta\geq0$, the target is $c_j/2+\beta h_j$. Equation~\eqref{eq:HX} annihilates the reference white exactly. Under another illuminant it prescribes an X change proportional to the difference between that illuminant's X/Y ratio and the D65 ratio, while retaining the target Y and Z. One common spectrum must implement the responses under every specified condition.
+At amplitude $\beta\geq0$, the target is $c_j/2+\beta h_j$. Equation~\eqref{eq:HX} maps the reference white exactly to zero. Under another illuminant it prescribes an X change proportional to the difference between that illuminant's X/Y ratio and the D65 ratio, while retaining the target Y and Z. One common spectrum must implement the responses under every specified condition.
 
-We consider either the three named illuminants or all their nonzero nonnegative mixtures. For the latter, homogeneity permits weights $w_j\geq0$ with $\sum_jw_j=1$, and
+We consider either the three named illuminants or all their nonzero non-negative mixtures. For the latter, homogeneity permits weights $w_j\geq0$ with $\sum_jw_j=1$, and
 \begin{equation}
  A_w=\sum_jw_jA_j,\quad c_w=\sum_jw_jc_j,\quad h_w=\sum_jw_jh_j.
  \label{eq:mixture}
@@ -90,9 +91,9 @@ Separate positive rescaling of the generating illuminants preserves their mixtur
  K=\max_{w\in\mathcal J}\frac{\|h_w\|_2}{\|c_w\|_2}.
  \label{eq:K}
 \end{equation}
-For these inputs, exact Gram inequalities establish the same $K$ for the named and mixture domains. No automatic transfer from named-lamp errors to mixture errors is assumed.
+For these inputs, exact Gram inequalities establish the same $K$ for the named and mixture domains. 
 
-\subsection{Fidelity, capacity, and the inflation correction}
+\subsection{Fidelity, capacity, and the unchanged-spectrum baseline}
 Fix $0\leq\rho<1$. A feasible design in class $\mathcal C\in\{\mathcal U,\mathcal S\}$ satisfies
 \begin{equation}
  z\in\mathcal C,\quad A_0z=0,\quad
@@ -169,7 +170,7 @@ The tolerant upper bound uses a continuous piecewise-cubic function $\phi$ that 
 \end{equation}
 Equations~\eqref{eq:peano} and~\eqref{eq:ibp} establish upper bounds for the entire absolutely continuous class.
 
-A witness is an explicit feasible spectrum. Lower bounds use piecewise-linear witnesses with exact rational node values. The verifier checks the passive box, every slope, the reference moments, and the response inequalities. Optimizer termination is not used as a feasibility or optimality certificate. Supplement 1 provides the support constructions and the arithmetic needed to reproduce the enclosures.
+A witness is an explicit feasible spectrum. Lower bounds use piecewise-linear witnesses with exact rational node values. The verifier checks the passive box, every slope, the reference moments, and the response inequalities. Optimizer termination is not used as a feasibility or optimality certificate. Supplementary material provides the support constructions and the arithmetic needed to reproduce the enclosures.
 
 \subsection{Certification for all illuminant mixtures}
 For a proposed witness, write $e_j=A_jz-\beta h_j$. The matrices
@@ -179,7 +180,7 @@ For a proposed witness, write $e_j=A_jz-\beta h_j$. The matrices
  Q_{ij}=\rho^2\beta^2K^2c_i^{\mathsf T}c_j-e_i^{\mathsf T}e_j
  \label{eq:grams}
 \end{equation}
-are checked entrywise. Nonnegative entries imply $w^{\mathsf T}Gw\geq0$ and $w^{\mathsf T}Qw\geq0$ for every nonnegative $w$. A named illumination attains $K$, so the target certificate proves Eq.~\eqref{eq:K} for the whole mixture domain. The error certificate proves witness feasibility there. Upper bounds using named conditions also bound the smaller all-mixture feasible set. Consequently the capacity enclosures below apply to both illumination domains, without asserting that their exact capacities are equal.
+are checked entrywise. Non-negative entries imply $w^{\mathsf T}Gw\geq0$ and $w^{\mathsf T}Qw\geq0$ for every non-negative $w$. A named illumination attains $K$, so the target certificate proves Eq.~\eqref{eq:K} for the whole mixture domain. The error certificate proves witness feasibility there. Upper bounds using named conditions also bound the smaller all-mixture feasible set. Consequently the capacity enclosures below apply to both illumination domains, without asserting that their exact capacities are equal.
 
 \section{Absolute tolerance benefit}
 \begin{theorem}\label{thm:main}
@@ -220,7 +221,7 @@ For $r\leq x<1$, the same tolerant spectrum gives $b_{\mathcal S}(x)\geq(1-r)b_1
  +(U_0-B_0)(1-kx)(P-Wx)>0.
  \label{eq:intervalpolynomial}
 \end{multline}
-Above $r$, the corresponding numerator is $[(1-r)b_1+U_0-B_0](P-Wx)-L(1-x)$. All denominators are positive over the stated interval. Exact coefficient and endpoint signs prove positivity of the quadratic below $r$ and the decreasing affine numerator above $r$. Supplement 1 gives the constants and sign checks.
+Above $r$, the corresponding numerator is $[(1-r)b_1+U_0-B_0](P-Wx)-L(1-x)$. All denominators are positive over the stated interval. Exact coefficient and endpoint signs prove positivity of the quadratic below $r$ and the decreasing affine numerator above $r$. Supplementary material gives the constants and sign checks.
 \end{proof}
 
 \begin{table}[htbp]
@@ -253,7 +254,7 @@ The capacity enclosures in Fig.~\ref{fig:capacity} give a positive regularity pe
  =\frac{d(0)}{1-\rho}-d(\rho).
  \label{eq:penaltyidentity}
 \end{equation}
-Thus bonus ordering alone compares $d(\rho)$ with the inflated penalty $d(0)/(1-\rho)$. The separate raw-increment inequality~\eqref{eq:rawgain} proves that $d(0.10)<d(0)$. The endpoint calculation in Supplement 1, Sec.~4.A, gives
+Thus bonus ordering alone compares $d(\rho)$ with the inflated penalty $d(0)/(1-\rho)$. The separate raw-increment inequality~\eqref{eq:rawgain} proves that $d(0.10)<d(0)$. The endpoint calculation in Supplementary material, Sec.~4.A, gives
 \begin{equation}
  \frac{d(0)-d(0.10)}{d(0)}>0.2160.
  \label{eq:penalty}
@@ -270,7 +271,7 @@ Thus the allowance removes more than 21.60\% of the exact-response penalty. The 
 The interval in Fig.~\ref{fig:interval} shows that the comparison persists across a range of allowances around the primary value. At the sensitivity values 0.05 and 0.20, the available absolute-bonus bounds overlap. They do not determine the ordering at those two values.
 
 \section{Actual response gains and a necessary Y cost}
-Let $\beta_*\simeq0.4027278731222646$ denote the exact rational amplitude of the certified tolerant S witness. This amplitude is attainable for the named conditions and for all their nonnegative mixtures. Figure~\ref{fig:cost} compares the witness responses with the universal bounds proved below.
+Let $\beta_*\simeq0.4027278731222646$ denote the exact rational amplitude of the certified tolerant S witness. This amplitude is attainable for the named conditions and for all their non-negative mixtures. Figure~\ref{fig:cost} compares the witness responses with the universal bounds proved below.
 
 \begin{theorem}\label{thm:response}
 Every feasible $z\in\mathcal S$ at $\rho=0.10$ and $\beta\geq\beta_*$ satisfies
@@ -292,12 +293,12 @@ Eliminating the other secondary lamp's error ball leaves, for lamp $j$,
  \quad\|e_j\|_2\leq T_j=\beta\rho K\|c_j\|_2,
  \label{eq:cap}
 \end{equation}
-where $C_j=P_{\mathcal S}-\rho K\|c_{3-j}\|_2\|\mu_{3-j}\|_2$ for $j=1,2$. For a unit coordinate vector $a$, put $p=a^{\mathsf T}\mu_j$ and $s^2=\|\mu_j\|_2^2$. The maximum of $a^{\mathsf T}e$ over this ball intersected with a half-space is $T_j$ if $pT_j\leq B_j$; otherwise, for a nonempty cap, it is
+where $C_j=P_{\mathcal S}-\rho K\|c_{3-j}\|_2\|\mu_{3-j}\|_2$ for $j=1,2$. For a unit coordinate vector $a$, put $p=a^{\mathsf T}\mu_j$ and $s^2=\|\mu_j\|_2^2$. The maximum of $a^{\mathsf T}e$ over this ball intersected with a half-space is $T_j$ if $pT_j\leq B_j$; otherwise, for a non-empty cap, it is
 \begin{equation}
  \frac{pB_j+\sqrt{s^2-p^2}\sqrt{s^2T_j^2-B_j^2}}{s^2}.
  \label{eq:capformula}
 \end{equation}
-Apply this expression to $a=-e_X$ and $a=e_Y$, enclosing each radical outward. At $\beta_*$ the resulting bounds give Eqs.~\eqref{eq:actual} and~\eqref{eq:Ycost}. After division by $\beta$, the cap shrinks as $\beta$ grows because $L_{\mathcal S}/\beta$ decreases. The positive normalized X lower bounds and negative normalized A-Y upper bound therefore extend to all larger feasible amplitudes. Exact designs have $(A_jz)_X\leq B_0h_{j,X}$, which gives the comparison values. Restricting the A error ball further to $e_{1,Y}\geq0$ gives the stated amplitude upper bound. Details and rational enclosures appear in Supplement 1.
+Apply this expression to $a=-e_X$ and $a=e_Y$, enclosing each radical outward. At $\beta_*$ the resulting bounds give Eqs.~\eqref{eq:actual} and~\eqref{eq:Ycost}. After division by $\beta$, the cap shrinks as $\beta$ grows because $L_{\mathcal S}/\beta$ decreases. The positive normalized X lower bounds and negative normalized A-Y upper bound therefore extend to all larger feasible amplitudes. Exact designs have $(A_jz)_X\leq B_0h_{j,X}$, which gives the comparison values. Restricting the A error ball further to $e_{1,Y}\geq0$ gives the stated amplitude upper bound. Details and rational enclosures appear in Supplementary material.
 \end{proof}
 
 \begin{figure}[htbp]
@@ -343,7 +344,7 @@ To compare directions in common units, let $\Phi_d=K_d\Delta_{\mathcal S,d}(0.10
  \Phi_X>45.278\,\Phi_Z.
  \label{eq:direction}
 \end{equation}
-This inequality includes a zero Z bonus. It compares two prescribed directions, with no optimization over directions. The construction and figure are in Supplement 1.
+This inequality includes a zero Z bonus. It compares two prescribed directions, with no optimization over directions. The construction and figure are in Supplementary material.
 
 A separate norm comparison uses one invertible linear map $D$ consistently for the error, target, and incident XYZ vectors. Writing $\kappa=\operatorname{cond}_2(D)$, norm equivalence bounds the normalized error by factors $\kappa^{-2}$ and $\kappa^2$. The saved capacity certificates then prove
 \begin{equation}
@@ -353,29 +354,26 @@ A separate norm comparison uses one invertible linear map $D$ consistently for t
 \end{equation}
 This is a sufficient radius for the X class comparison. Equation~\eqref{eq:direction} is established in the original Euclidean norm; the two conclusions are separate.
 
-Two analytical properties further specify the result's scope. First, both classes have the same capacity suprema as their $C^\infty$ subclasses when no common higher-derivative bound is imposed. Strict contraction, positive mollification, and a finite-dimensional moment correction preserve the prescribed responses and spectral inequalities. Thus the capacity comparison does not depend on piecewise-linear corners. Second, capacities are continuous under sufficiently small $L^1$ perturbations of the response kernels, with continuous reference-annihilating targets, preserved moment rank, positive incident norms, and fixed derivative bounds. The strict bonus ordering consequently persists in a neighborhood of the specified input functions. Supplement 1 proves both statements. They establish equality of suprema and qualitative stability, respectively; they do not supply smooth endpoint attainment or a numerical input-uncertainty radius.
+Two analytical properties further specify the result's scope. First, both classes have the same capacity suprema as their $C^\infty$ subclasses when no common higher-derivative bound is imposed. Strict contraction, positive mollification, and a finite-dimensional moment correction preserve the prescribed responses and spectral inequalities. Thus the capacity comparison does not depend on piecewise-linear corners. Second, capacities are continuous under sufficiently small $L^1$ perturbations of the response kernels, with continuous reference-annihilating targets, preserved moment rank, positive incident norms, and fixed derivative bounds. The strict bonus ordering consequently persists in a neighborhood of the specified input functions. Supplementary material proves both statements. They establish equality of suprema and qualitative stability, respectively; they do not supply smooth endpoint attainment or a numerical input-uncertainty radius.
 
 \section{Discussion}
-The distinction between total capacity and tolerance benefit changes the interpretation of spectral regularity. At exact fidelity, the derivative envelope imposes a substantial capacity penalty. At the selected tolerance, the restricted class remains smaller, but it gains more absolute capacity. Removing unchanged-spectrum inflation makes this comparison informative even when the exact capacities differ substantially. The certified factor above 1.50 cannot be explained solely by expressing the improvement as a percentage of a smaller regularized baseline.
+The distinction between total capacity and tolerance benefit changes the interpretation of spectral regularity. At exact fidelity, the derivative envelope imposes a substantial capacity penalty. At the selected tolerance, the restricted class remains smaller, but it gains more absolute capacity. Subtracting the gain obtainable without changing the spectrum allows a meaningful comparison even when the exact capacities differ substantially. The certified factor above 1.50 cannot be explained solely by expressing the improvement as a percentage of a smaller regularized baseline.
 
 The actual-response theorem gives the capacity comparison a concrete colorimetric meaning. Every feasible $\mathcal S$ design operating at $\beta_*$ or above exceeds the exact prescribed-transform X limits of $\mathcal S$ under both A and FL11. Under A it must also surrender some Y. The response allowance therefore changes which combinations of intended effect and collateral response are feasible. A design brief that additionally requires no A-Y loss excludes the certified high-capacity regime, even though it uses the same exact D65 reference. This conclusion applies to every feasible design in the stated class and regime.
 
-Earlier reconstruction and paramer methods construct spectra subject to smoothness, response equality, and tolerance constraints. The present comparison asks how the absolute capacity increment differs between two nested spectral classes when the same allowance is introduced. The certificate bounds answer that question for a fixed transformation and connect it to necessary actual responses. Optimization, response neighborhoods, and derivative constraints are established tools. The result quantifies their interaction for the full spectral classes of the chosen model.
+Earlier reconstruction and paramer methods construct spectra subject to smoothness, response equality, and tolerance constraints. The present comparison asks how the absolute capacity increment differs between two nested spectral classes when the same allowance is introduced. The certificate bounds answer that question for a fixed transformation and connect it to necessary actual responses. Using optimization, response neighborhoods, and derivative constraints, this work quantifies their interaction for the full spectral classes of the chosen model.
 
-The study's application is reference-matched spectral design under specified illumination. Its coordinates, derivative envelope, and effect-relative tolerance are explicit design choices. A particular pigment system, printing process, or coating family would add its own realization constraints. A perceptual specification would require a corresponding perceptual error model. Such changes define further design problems; the present certificates give a reproducible baseline against which their capacity costs can be assessed.
+The study's application is reference-matched spectral design under specified illumination. Its coordinates, derivative envelope, and effect-relative tolerance are explicit design choices. A particular pigment system, printing process, or coating family would add its own realization constraints. A perceptual specification would require a corresponding perceptual error model. Such changes define further design problems, the present certificates give a reproducible baseline against which their capacity costs can be assessed.
 
 \section{Conclusion}
-For passive reflectances preserving the response of a flat 50\% reflector under D65, a response allowance can be more valuable under spectral regularity in absolute terms. In the specified CIE 1931/D65/A/FL11 model, the derivative-bounded class has an inflation-corrected capacity bonus more than 50\% larger than the unrestricted passive class at $\rho=0.10$. The strict ordering holds throughout a certified tolerance interval and for all nonnegative mixtures of the three illuminants. Every feasible derivative-bounded design at or above a certified attainable amplitude produces larger actual X increments than every exact design in the same class for the prescribed transformation, with a necessary A-Y deficit. These results quantify how fidelity and regularity jointly determine attainable response changes.
+For passive reflectances preserving the response of a flat 50\% reflector under D65, a response allowance can be more valuable under spectral regularity in absolute terms. In the specified CIE 1931/D65/A/FL11 model, the derivative-bounded class has an inflation-corrected capacity bonus more than 50\% larger than the unrestricted passive class at $\rho=0.10$. The strict ordering holds throughout a certified tolerance interval and for all non-negative mixtures of the three illuminants. Every feasible derivative-bounded design at or above a certified attainable amplitude produces larger actual X increments than every exact design in the same class for the prescribed transformation, with a necessary A-Y deficit. These results quantify how fidelity and regularity jointly determine attainable response changes.
 
 \begin{backmatter}
-\bmsection{Funding}
-% Intentionally blank: to be supplied by the author.
-\bmsection{Disclosures}
-% Intentionally blank: the author must supply the conflict-of-interest declaration.
+
 \bmsection{Data availability}
-The exact input fixture, certificate verifier, MATLAB figure code, and tabulated results are included in the accompanying \texttt{reproducibility/} package. The CIE source datasets are identified in Refs.~\cite{CIEObserver,CIED65,CIEA,CIEFL}. A public release location has not been assigned.
+Data is available at \href{https://github.com/shankhya/colour-lifting-repo}{https://github.com/shankhya/colour-lifting-repo}
 \bmsection{Supplemental document}
-See Supplement 1 for detailed proofs, certificate construction, sensitivity calculations, and reproduction instructions.
+See Supplemental Material for detailed proofs, certificate construction, sensitivity calculations, and reproduction instructions.
 \end{backmatter}
 \bibliography{references}
 \end{document}
