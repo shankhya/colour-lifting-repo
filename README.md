@@ -6,7 +6,7 @@ Manuscript, supplement and reproducibility files.
 
 ## Files
 
-- [`manuscript/`](manuscript/): `main.tex` and `main.pdf`, `supplement.tex` and `supplement.pdf`, bibliography, four vector figures, and the required Optica template files.
+- [`manuscript/`](manuscript/): `main.tex` and `main.pdf`, `supplement.tex` and `supplement.pdf`, bibliography, four vector figures, and the required template files.
 - [`manuscript/cover-letter.docx`](manuscript/cover-letter.docx) and [`manuscript/title-page.docx`](manuscript/title-page.docx): editable submission documents with the author name, affiliation and corresponding email.
 - [`reproducibility/`](reproducibility/): exact input data and certificates, Python verification scripts, MATLAB plotting code, three numerical tables, and the validation record.
 - [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md): CIE data attribution and template license notices.
