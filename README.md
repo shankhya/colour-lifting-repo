@@ -22,7 +22,7 @@ latexmk -xelatex main.tex
 latexmk -xelatex supplement.tex
 ```
 
-The article has 11 pages and the supplement has 8 pages. The PDFs are included for reading without a TeX installation. Bibliography output and ZIP archives are generated as needed rather than stored as duplicate source packages.
+The article has 10 pages and the supplement has 8 pages. The PDFs are included for reading without a TeX installation. Bibliography output and ZIP archives are generated as needed rather than stored as duplicate source packages.
 
 ## Verify the results
 

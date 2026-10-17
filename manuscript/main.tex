@@ -15,6 +15,15 @@
 \usepackage{lineno}
 \linenumbers
 \pagestyle{plain}
+% Compact vertical spacing; retain the journal's fonts and page geometry.
+\linespread{0.98}
+\AtBeginDocument{%
+  \setlength{\abovedisplayskip}{5pt plus 2pt minus 1pt}%
+  \setlength{\belowdisplayskip}{5pt plus 2pt minus 1pt}%
+}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\floatsep}{10pt plus 2pt minus 2pt}
+\setlength{\intextsep}{9pt plus 2pt minus 2pt}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
 \begin{document}
@@ -216,6 +225,7 @@ Above $r$, the corresponding numerator is $[(1-r)b_1+U_0-B_0](P-Wx)-L(1-x)$. All
 
 \begin{table}[htbp]
 \centering
+\renewcommand{\arraystretch}{1.15}
 \caption{Certified capacity enclosures. Display endpoints are rounded outward. Exact rational certificates determine all strict comparisons.}
 \label{tab:capacity}
 \begin{tabular}{lcc}
@@ -252,7 +262,7 @@ Thus the allowance removes more than 21.60\% of the exact-response penalty. The 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.96\linewidth]{figures/02-tolerance-interval.pdf}
+\includegraphics[width=0.90\linewidth]{figures/02-tolerance-interval.pdf}
 \caption{Analytical lower bound for the S bonus and upper bound for the U bonus. The certified strict-ordering interval is $[0.056736,0.137809]$. Its proof uses polynomial signs over the full interval; sampled curve points are only a visualization. The endpoints are sufficient bounds and do not identify the actual crossings.}
 \label{fig:interval}
 \end{figure}
@@ -299,6 +309,7 @@ Apply this expression to $a=-e_X$ and $a=e_Y$, enclosing each radical outward. A
 
 \begin{table}[htbp]
 \centering\small
+\renewcommand{\arraystretch}{1.15}
 \caption{Absolute response quantities for the certified S witness at $\beta_*$. D65 target, actual change, and error are exactly zero. Entries for the other illuminants are rounded display values. $\eta_j=\|e_j\|_2/(\beta_*K\|c_j\|_2)$ is the lamp's contribution to the global criterion.}
 \label{tab:response}
 \begin{tabular}{lrr}
